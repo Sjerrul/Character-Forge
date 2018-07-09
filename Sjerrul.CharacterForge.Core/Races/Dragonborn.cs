@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Core.Races
 {
-    public class Dwarf : BaseRace
+    public class Dragonborn : BaseRace
     {
-        public override Race Race => Race.Dwarf;
+        public override Race Race => Race.Dragonborn;
 
-        public Dwarf()
+        public Dragonborn()
             : base()
         {
             this.Features = new List<IFeature>
             {
-                new SpeedModification(25),
-                new Darkvision(60),
+                new SpeedModification(30)
             };
 
             this.AbilityModifiers = new List<IAbilityModifier>
             {
-                new AbilityModifier(AbilityName.Constitution, +2)
+                new AbilityModifier(AbilityName.Strength, +2),
+                new AbilityModifier(AbilityName.Charisma, +1)
             };
         }
     }

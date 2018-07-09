@@ -8,5 +8,6 @@ namespace Sjerrul.CharacterForge.Core.Features
 {
     public interface IFeature
     {
+        void Apply(Character c);
     }
 }

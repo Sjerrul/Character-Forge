@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Core.Abilities
 {
-    public enum Ability
+    public enum AbilityName
     {
         Constitution,
         Strength,

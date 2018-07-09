@@ -1,21 +1,22 @@
 ﻿using Sjerrul.CharacterForge.Core.Abilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Core.Features
 {
-    public class AbilityModifier : IFeature
+    public class AbilityModifier : IAbilityModifier
     {
-        private readonly Ability ability;
-        private readonly int modification;
+        public AbilityName AbilityName { get; private set; }
+        private readonly int modifier;
 
-        public AbilityModifier(Ability ability, int modification)
+        public AbilityModifier(AbilityName abilityName, int modifier)
         {
-            this.ability = ability;
-            this.modification = modification;
+            this.AbilityName = abilityName;
+            this.modifier = modifier;
+        }
+
+        public int Modify(int score)
+        {
+            return score + this.modifier;
         }
     }
 }

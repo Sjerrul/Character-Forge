@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sjerrul.CharacterForge.Core.Features;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public interface IRace
     {
+        Race Race { get; }
+
+        IEnumerable<IFeature> Features { get; }
+
+        IEnumerable<IAbilityModifiers> AbilityModifiers { get; }
     }
 }

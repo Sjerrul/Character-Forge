@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sjerrul.CharacterForge.Builder.Tests
+namespace Sjerrul.CharacterForge.Core.Races
 {
-    public class CharacterBuilderTests
+    public enum Race
     {
+        Dwarf,
+        Dragonborn,
+        Undefined
     }
 }

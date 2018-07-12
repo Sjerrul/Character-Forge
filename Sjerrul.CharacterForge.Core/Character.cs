@@ -18,6 +18,8 @@ namespace Sjerrul.CharacterForge.Core
         public int Wisdom { get; private set; }
         public int Constitution { get; private set; }
 
+        public int Proficiency { get; private set; }
+
         public Character()
         {
             this.Strength = 10;
@@ -26,6 +28,8 @@ namespace Sjerrul.CharacterForge.Core
             this.Intelligence = 10;
             this.Wisdom = 10;
             this.Constitution = 10;
+
+            this.Proficiency = +2;
 
             this.race = new UndefinedRace();
         }

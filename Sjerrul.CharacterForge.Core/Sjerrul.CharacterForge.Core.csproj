@@ -51,6 +51,7 @@
     <Compile Include="Features\Darkvision.cs" />
     <Compile Include="Features\SpeedModification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Features\IAbilityModifier.cs" />
     <Compile Include="Races\UndefinedRace.cs" />
     <Compile Include="Races\Dragonborn.cs" />
     <Compile Include="Races\Dwarf.cs" />

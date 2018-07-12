@@ -14,12 +14,12 @@ namespace Sjerrul.CharacterForge.Core.Races
 
         public abstract Race Race { get; }
 
-        public IEnumerable<IAbilityModifiers> AbilityModifiers { get; protected set; }
+        public IEnumerable<IAbilityModifier> AbilityModifiers { get; protected set; }
 
         protected BaseRace()
         {
             this.Features = new List<IFeature>();
-            this.AbilityModifiers = new List<IAbilityModifiers>();
+            this.AbilityModifiers = new List<IAbilityModifier>();
         }
     }
 }

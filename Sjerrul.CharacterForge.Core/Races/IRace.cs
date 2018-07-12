@@ -13,6 +13,6 @@ namespace Sjerrul.CharacterForge.Core.Races
 
         IEnumerable<IFeature> Features { get; }
 
-        IEnumerable<IAbilityModifiers> AbilityModifiers { get; }
+        IEnumerable<IAbilityModifier> AbilityModifiers { get; }
     }
 }

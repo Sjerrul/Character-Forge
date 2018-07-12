@@ -18,5 +18,6 @@ namespace Sjerrul.CharacterForge.Core.Features
         {
             this.speedModification = speedModification;
         }
+
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sjerrul.CharacterForge.Builder
+namespace Sjerrul.CharacterForge.Builder.Violations
 {
-    public class CharacterBuilder
+    public interface IViolation
     {
+
     }
 }

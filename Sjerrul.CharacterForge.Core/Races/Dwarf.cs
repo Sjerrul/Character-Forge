@@ -10,7 +10,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public class Dwarf : BaseRace
     {
-        public override Race Race => Race.Dwarf;
+        public override Race RaceName => Race.Dwarf;
 
         public Dwarf()
             : base()
@@ -21,9 +21,9 @@ namespace Sjerrul.CharacterForge.Core.Races
                 new Darkvision(60),
             };
 
-            this.AbilityModifiers = new List<IAbilityModifier>
+            this.AbilityAdjustments = new List<IAbilityAdjustment>
             {
-                new AbilityModifier(AbilityName.Constitution, +2)
+                new AbilityAdjustment(AbilityName.Constitution, +2)
             };
         }
     }

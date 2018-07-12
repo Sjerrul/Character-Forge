@@ -5,12 +5,15 @@ namespace Sjerrul.CharacterForge.Core
 {
     public interface ICharacter
     {
-        Race Race { get; }
+        int BaseStrength { get; }
+        int BaseCharisma { get; }
+        int BaseDexterity { get; }
+        int BaseIntelligence { get; }
+        int BaseWisdom { get; }
+        int BaseConstitution { get; }
 
-        void SetBaseBaseAbilityScore(AbilityName ability, int score);
+        IRace Race { get; }
 
-        int GetAbilityScore(AbilityName ability);
-
-        void SetRace(Race race);
+        void SetRace(IRace race);
     }
 }

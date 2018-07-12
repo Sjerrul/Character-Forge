@@ -9,10 +9,10 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public interface IRace
     {
-        Race Race { get; }
+        Race RaceName { get; }
 
         IEnumerable<IFeature> Features { get; }
 
-        IEnumerable<IAbilityModifier> AbilityModifiers { get; }
+        IEnumerable<IAbilityAdjustment> AbilityAdjustments { get; }
     }
 }

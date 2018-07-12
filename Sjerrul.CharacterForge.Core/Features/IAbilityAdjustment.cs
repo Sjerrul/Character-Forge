@@ -2,10 +2,9 @@
 
 namespace Sjerrul.CharacterForge.Core.Features
 {
-    public interface IAbilityModifier
+    public interface IAbilityAdjustment
     {
         AbilityName AbilityName { get; }
-
-        int Modify(int score);
+        int Adjustment { get; }
     }
 }

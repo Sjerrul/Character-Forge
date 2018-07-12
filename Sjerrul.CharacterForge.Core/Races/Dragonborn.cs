@@ -10,7 +10,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public class Dragonborn : BaseRace
     {
-        public override Race Race => Race.Dragonborn;
+        public override Race RaceName => Race.Dragonborn;
 
         public Dragonborn()
             : base()
@@ -20,10 +20,10 @@ namespace Sjerrul.CharacterForge.Core.Races
                 new SpeedModification(30)
             };
 
-            this.AbilityModifiers = new List<IAbilityModifier>
+            this.AbilityAdjustments = new List<IAbilityAdjustment>
             {
-                new AbilityModifier(AbilityName.Strength, +2),
-                new AbilityModifier(AbilityName.Charisma, +1)
+                new AbilityAdjustment(AbilityName.Strength, +2),
+                new AbilityAdjustment(AbilityName.Charisma, +1)
             };
         }
     }

@@ -8,18 +8,41 @@ using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Core.Races
 {
-    public abstract class BaseRace : IRace
+    public abstract class BaseRace : IRace, IEquatable<IRace>
     {
         public IEnumerable<IFeature> Features { get; protected set; }
 
-        public abstract Race Race { get; }
+        public abstract Race RaceName { get; }
 
-        public IEnumerable<IAbilityModifier> AbilityModifiers { get; protected set; }
+        public IEnumerable<IAbilityAdjustment> AbilityAdjustments { get; protected set; }
 
         protected BaseRace()
         {
             this.Features = new List<IFeature>();
-            this.AbilityModifiers = new List<IAbilityModifier>();
+            this.AbilityAdjustments = new List<IAbilityAdjustment>();
+        }
+
+        public bool Equals(IRace other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            return this.RaceName == other.RaceName;
+        }
+
+        public override int GetHashCode()
+        {
+            // Per Eric Lippert: https://stackoverflow.com/a/263416/1535282
+            unchecked 
+            {
+                int hash = (int)2166136261;
+
+                hash = (hash * 16777619) ^ this.RaceName.GetHashCode();
+
+                return hash;
+            }
         }
     }
 }

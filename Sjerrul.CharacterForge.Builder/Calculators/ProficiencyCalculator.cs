@@ -10,7 +10,7 @@ namespace Sjerrul.CharacterForge.Builder.Calculators
     {
         public static int CalculateProficiency(int level)
         {
-            return +2;
+            return (int)Math.Ceiling((decimal)level /  4) + 1;
         }
     }
 }

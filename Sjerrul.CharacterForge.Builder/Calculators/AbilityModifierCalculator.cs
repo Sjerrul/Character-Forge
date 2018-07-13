@@ -10,7 +10,7 @@ namespace Sjerrul.CharacterForge.Builder.Calculators
     {
         public static int CalculateAbilityModifier(int abilityScore)
         {
-            return 0;
+            return (abilityScore / 2) - 5;
         }
     }
 }

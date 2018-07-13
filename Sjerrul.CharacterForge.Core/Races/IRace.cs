@@ -1,4 +1,5 @@
 ﻿using Sjerrul.CharacterForge.Core.Features;
+using Sjerrul.CharacterForge.Core.Races.Subraces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace Sjerrul.CharacterForge.Core.Races
         IEnumerable<IFeature> Features { get; }
 
         IEnumerable<IAbilityAdjustment> AbilityAdjustments { get; }
+
+        IEnumerable<ISubrace> PossibleSubraces { get; }
     }
 }

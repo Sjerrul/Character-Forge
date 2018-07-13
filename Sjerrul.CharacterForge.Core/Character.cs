@@ -1,7 +1,10 @@
 ﻿using Sjerrul.CharacterForge.Core.Abilities;
+using Sjerrul.CharacterForge.Core.Classes;
 using Sjerrul.CharacterForge.Core.Races;
+using Sjerrul.CharacterForge.Core.Races.Subraces;
 using Sjerrul.CharacterForge.Utilities.Assertion;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Sjerrul.CharacterForge.Core
@@ -9,6 +12,9 @@ namespace Sjerrul.CharacterForge.Core
     public class Character : ICharacter
     {
         public IRace Race { get; private set; }
+        public ISubrace Subrace { get; private set; }
+
+        public IList<IClass> Classes { get; private set; }
 
         public int BaseStrength { get; set; }
         public int BaseCharisma { get; set; }
@@ -29,6 +35,8 @@ namespace Sjerrul.CharacterForge.Core
             this.BaseConstitution = 10;
 
             this.Race = new UndefinedRace();
+
+            this.Classes = new List<IClass>();
         }
 
         public void SetRace(IRace race)
@@ -38,12 +46,26 @@ namespace Sjerrul.CharacterForge.Core
             this.Race = race;
         }
 
+        public void SetRace(ISubrace subrace)
+        {
+            Guard.Against.ArgumentNull(subrace, nameof(subrace));
+
+            this.Subrace = subrace;
+        }
+
         public void SetLevel(int level)
         {
             Guard.That(level > 0).WhenFalse.Throws<ArgumentException>($"Parameter level is {level}, but must be positive");
             Guard.That(level < 20).WhenFalse.Throws<ArgumentException>($"Parameter level is {level}, but must be less than 20");
 
             this.Level = level;
+        }
+
+        public void AddClass(IClass characterClass)
+        {
+            Guard.Against.ArgumentNull(characterClass, nameof(characterClass));
+
+            this.Classes.Add(characterClass);
         }
     }
 }

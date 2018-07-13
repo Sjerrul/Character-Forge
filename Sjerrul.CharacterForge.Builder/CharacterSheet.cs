@@ -1,4 +1,5 @@
 ﻿using Sjerrul.CharacterForge.Builder.Calculators;
+using Sjerrul.CharacterForge.Core.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,9 @@ namespace Sjerrul.CharacterForge.Builder
     public class CharacterSheet
     {
         public int Level { get; internal set; }
+        public IEnumerable<IClass> Classes { get; internal set; }
+
+        public int Hitpoints => HitpointCalculator.CalculateHitpoints(this.Classes);
 
         public int Strength { get; internal set; }
         public int Consitution { get; internal set; }
@@ -26,5 +30,7 @@ namespace Sjerrul.CharacterForge.Builder
         public int CharismaModifier => AbilityModifierCalculator.CalculateAbilityModifier(this.Charisma);
 
         public int Proficiency => ProficiencyCalculator.CalculateProficiency(this.Level);
+
+
     }
 }

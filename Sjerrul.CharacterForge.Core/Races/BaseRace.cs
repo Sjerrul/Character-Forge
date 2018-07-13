@@ -1,4 +1,5 @@
 ﻿using Sjerrul.CharacterForge.Core.Features;
+using Sjerrul.CharacterForge.Core.Races.Subraces;
 using Sjerrul.CharacterForge.Utilities.Assertion;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,19 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public abstract class BaseRace : IRace, IEquatable<IRace>
     {
-        public IEnumerable<IFeature> Features { get; protected set; }
-
         public abstract Race RaceName { get; }
 
+        public IEnumerable<IFeature> Features { get; protected set; }
+
         public IEnumerable<IAbilityAdjustment> AbilityAdjustments { get; protected set; }
+
+        public IEnumerable<ISubrace> PossibleSubraces { get; protected set; }
 
         protected BaseRace()
         {
             this.Features = new List<IFeature>();
             this.AbilityAdjustments = new List<IAbilityAdjustment>();
+            this.PossibleSubraces = new List<ISubrace>();
         }
 
         public bool Equals(IRace other)

@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\HitpointCalculatorTests.cs" />
     <Compile Include="Calculators\AbilityModifierCalculatorTests.cs" />
     <Compile Include="Calculators\ProficiencyCalculatorTests.cs" />
     <Compile Include="CharacterSheetBuilderTests.cs" />

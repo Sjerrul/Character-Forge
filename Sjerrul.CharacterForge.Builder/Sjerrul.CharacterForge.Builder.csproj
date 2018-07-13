@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculators\AbilityModifierCalculator.cs" />
+    <Compile Include="Calculators\HitpointCalculator.cs" />
     <Compile Include="Calculators\ProficiencyCalculator.cs" />
     <Compile Include="CharacterSheetBuilder.cs" />
     <Compile Include="CharacterSheet.cs" />

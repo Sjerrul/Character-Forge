@@ -9,5 +9,7 @@ namespace Sjerrul.CharacterForge.Core.Classes
     public class Wizard : IClass
     {
         public int HitDie => 6;
+
+        public string Name => "Wizard";
     }
 }

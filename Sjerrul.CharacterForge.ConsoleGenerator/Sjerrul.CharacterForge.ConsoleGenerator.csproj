@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sjerrul.CharacterForge.Builder\Sjerrul.CharacterForge.Builder.csproj" />
+    <ProjectReference Include="..\Sjerrul.CharacterForge.Core\Sjerrul.CharacterForge.Core.csproj" />
+  </ItemGroup>
+
+</Project>

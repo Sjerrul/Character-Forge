@@ -9,6 +9,7 @@ namespace Sjerrul.CharacterForge.Core.Classes
 {
     public interface IClass
     {
+        string Name { get; }
         int HitDie { get; }
 
 

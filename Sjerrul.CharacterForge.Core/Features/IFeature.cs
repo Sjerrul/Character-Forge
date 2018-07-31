@@ -8,6 +8,6 @@ namespace Sjerrul.CharacterForge.Core.Features
 {
     public interface IFeature
     {
-        
+        string Description { get; }
     }
 }

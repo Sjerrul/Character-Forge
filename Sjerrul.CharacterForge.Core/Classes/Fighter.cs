@@ -9,5 +9,7 @@ namespace Sjerrul.CharacterForge.Core.Classes
     public class Fighter : IClass
     {
         public int HitDie => 10;
+
+        public string Name => "Fighter";
     }
 }

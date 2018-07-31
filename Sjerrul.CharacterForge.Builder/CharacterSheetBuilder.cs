@@ -19,6 +19,9 @@ namespace Sjerrul.CharacterForge.Builder
             var characterSheet = new CharacterSheet();
 
             SetAttributes(characterSheet, character);
+            characterSheet.Race = character.Race;
+            characterSheet.Classes = character.Classes;
+            characterSheet.Level = character.Level;
 
             return characterSheet;
         }

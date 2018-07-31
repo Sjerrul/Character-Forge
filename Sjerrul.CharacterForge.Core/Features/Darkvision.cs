@@ -11,6 +11,8 @@ namespace Sjerrul.CharacterForge.Core.Features
     {
         private readonly int range;
 
+        public string Description => $"You can see {range} ft. in total darkness";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Darkvision"/> class.
         /// </summary>

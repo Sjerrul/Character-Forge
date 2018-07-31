@@ -10,6 +10,8 @@ namespace Sjerrul.CharacterForge.Core.Features
     {
         private readonly int speedModification;
 
+        public string Description => $"Speed {this.speedModification.ToString("+#;-#;0")} ft.";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeedModification"/> class.
         /// </summary>

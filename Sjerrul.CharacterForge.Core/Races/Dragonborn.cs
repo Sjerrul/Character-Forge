@@ -22,7 +22,6 @@ namespace Sjerrul.CharacterForge.Core.Races
                 new BlackAncestry()
             };
 
-
             this.Features = new List<IFeature>
             {
                 new SpeedModification(30)

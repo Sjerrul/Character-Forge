@@ -10,6 +10,7 @@ namespace Sjerrul.CharacterForge.Core.Races
     {
         Dwarf,
         Dragonborn,
-        Undefined
+        Undefined,
+        Elf
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Sjerrul.CharacterForge.Builder;
+using Sjerrul.CharacterForge.Builder.Factories;
 using Sjerrul.CharacterForge.Builder.OutputGeneration;
 using Sjerrul.CharacterForge.Core;
 using Sjerrul.CharacterForge.Core.Classes;
@@ -19,10 +20,13 @@ namespace Sjerrul.CharacterForge.ConsoleGenerator
             Console.WriteLine("test driver applicaiton and will generate a");
             Console.WriteLine("pre-defined character sheet");
 
-            
+            Character character = BuildCharacter();
+
+            Rulebook rules = new Rulebook(new RulesFactory());
+            rules.CheckRules(character);
 
             CharacterSheetBuilder builder = new CharacterSheetBuilder();
-            CharacterSheet sheet = builder.Build(BuildCharacter());
+            CharacterSheet sheet = builder.Build(character);
 
             MarkdownGenerator generator = new MarkdownGenerator();
             string output = generator.Generate(sheet);
@@ -43,9 +47,9 @@ namespace Sjerrul.CharacterForge.ConsoleGenerator
             };
 
             character.SetLevel(1);
-            character.SetRace(new Dwarf());
-            character.SetRace(new HillDwarf());
-            character.AddClass(new Fighter());
+            character.SetRace(new Elf());
+            character.SetRace(new BlackAncestry());
+            character.AddClass(new Wizard());
 
             return character;
         }

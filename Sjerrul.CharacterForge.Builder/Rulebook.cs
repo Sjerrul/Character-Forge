@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Builder
 {
-    public class Rulebook
+    public class Rulebook : IRulebook
     {
         private readonly IEnumerable<IRule> rules;
 
@@ -22,7 +22,7 @@ namespace Sjerrul.CharacterForge.Builder
             this.rules = rulesFactory.BuildRuleset();
         }
 
-        public void CheckRules(Character character)
+        public IEnumerable<IViolation> CheckRules(Character character)
         {
             Guard.Against.ArgumentNull(character, nameof(character));
 
@@ -32,6 +32,8 @@ namespace Sjerrul.CharacterForge.Builder
                 var ruleViolations = rule.Check(character);
                 violations = violations.Concat(ruleViolations);
             }
+
+            return violations;
         }
     }
 }

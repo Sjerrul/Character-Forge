@@ -47,6 +47,7 @@
     <Compile Include="CharacterSheet.cs" />
     <Compile Include="Factories\RulesFactory.cs" />
     <Compile Include="Factories\IRulesFactory.cs" />
+    <Compile Include="IRulebook.cs" />
     <Compile Include="OutputGeneration\IGenerateOutput.cs" />
     <Compile Include="OutputGeneration\MarkdownGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

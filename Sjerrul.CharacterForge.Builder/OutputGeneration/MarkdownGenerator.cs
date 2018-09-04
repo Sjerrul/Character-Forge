@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sjerrul.CharacterForge.Builder.Violations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +9,34 @@ namespace Sjerrul.CharacterForge.Builder.OutputGeneration
 {
     public class MarkdownGenerator : IGenerateOutput<string>
     {
-        public string Generate(CharacterSheet sheet)
+        public string Generate(CharacterSheet characterSheet)
+        {
+            StringBuilder output = BuildCharacterMarkdown(characterSheet);
+
+            return output.ToString();
+        }
+
+        public string Generate(CharacterSheet characterSheet, IEnumerable<IViolation> violations)
+        {
+            StringBuilder output = BuildCharacterMarkdown(characterSheet);
+
+            if (violations != null && violations.Any())
+            {
+                AppendViolationBlock(output, violations);
+            }
+
+            return output.ToString();
+        }
+
+        private StringBuilder BuildCharacterMarkdown(CharacterSheet characterSheet)
         {
             StringBuilder output = new StringBuilder();
 
-            AppendBaseDescription(output, sheet);
-            AppendAbilityBlock(output, sheet);
-            AppendFeatureBlock(output, sheet);
+            AppendBaseDescription(output, characterSheet);
+            AppendAbilityBlock(output, characterSheet);
+            AppendFeatureBlock(output, characterSheet);
 
-            return output.ToString();
+            return output;
         }
 
         private void AppendBaseDescription(StringBuilder output, CharacterSheet sheet)
@@ -39,6 +59,15 @@ namespace Sjerrul.CharacterForge.Builder.OutputGeneration
             foreach (var feature in sheet.Race.Features)
             {
                 output.AppendLine(feature.Description);
+            }
+        }
+
+        private void AppendViolationBlock(StringBuilder output, IEnumerable<IViolation> violations)
+        {
+            output.AppendLine("# Rule Violations");
+            foreach (var violation in violations)
+            {
+                output.AppendLine(violation.Description);
             }
         }
 

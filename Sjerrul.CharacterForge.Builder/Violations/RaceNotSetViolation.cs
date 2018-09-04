@@ -8,8 +8,6 @@ namespace Sjerrul.CharacterForge.Builder.Violations
 {
     public class RaceNotSetViolation : IViolation
     {
-        public RaceNotSetViolation()
-        {
-        }
+        public string Description => "The character does not have a race set";
     }
 }

@@ -8,6 +8,6 @@ namespace Sjerrul.CharacterForge.Builder.Violations
 {
     public interface IViolation
     {
-
+        string Description { get; }
     }
 }

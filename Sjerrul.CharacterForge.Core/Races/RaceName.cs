@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Core.Races
 {
-    public enum Race
+    public enum RaceName
     {
         Dwarf,
         Dragonborn,

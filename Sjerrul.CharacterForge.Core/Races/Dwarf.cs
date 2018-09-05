@@ -11,7 +11,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public class Dwarf : BaseRace
     {
-        public override Race RaceName => Race.Dwarf;
+        public override RaceName RaceName => RaceName.Dwarf;
 
         public Dwarf()
             : base()

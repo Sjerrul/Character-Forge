@@ -44,9 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities\AbilityName.cs" />
+    <Compile Include="Classes\Barbarian.cs" />
+    <Compile Include="Decorators\LevelDecorator.cs" />
     <Compile Include="Classes\IClass.cs" />
     <Compile Include="Classes\Fighter.cs" />
     <Compile Include="Classes\Wizard.cs" />
+    <Compile Include="Decorators\BarbarianDecorator.cs" />
+    <Compile Include="Decorators\WizardDecorator.cs" />
     <Compile Include="Features\AbilityAdjustment.cs" />
     <Compile Include="Features\Trance.cs" />
     <Compile Include="ICharacter.cs" />
@@ -65,7 +69,7 @@
     <Compile Include="Races\Dwarf.cs" />
     <Compile Include="Races\IRace.cs" />
     <Compile Include="Races\BaseRace.cs" />
-    <Compile Include="Races\Race.cs" />
+    <Compile Include="Races\RaceName.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sjerrul.CharacterForge.Utilities\Sjerrul.CharacterForge.Utilities.csproj">

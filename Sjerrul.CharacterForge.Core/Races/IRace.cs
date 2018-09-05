@@ -10,7 +10,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public interface IRace
     {
-        Race RaceName { get; }
+        RaceName RaceName { get; }
 
         IEnumerable<IFeature> Features { get; }
 

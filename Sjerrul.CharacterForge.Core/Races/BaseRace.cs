@@ -11,7 +11,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public abstract class BaseRace : IRace, IEquatable<IRace>
     {
-        public abstract Race RaceName { get; }
+        public abstract RaceName RaceName { get; }
 
         public IEnumerable<IFeature> Features { get; protected set; }
 

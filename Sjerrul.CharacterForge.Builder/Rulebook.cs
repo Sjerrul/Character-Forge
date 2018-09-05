@@ -22,7 +22,7 @@ namespace Sjerrul.CharacterForge.Builder
             this.rules = rulesFactory.BuildRuleset();
         }
 
-        public IEnumerable<IViolation> CheckRules(Character character)
+        public IEnumerable<IViolation> CheckRules(ICharacter character)
         {
             Guard.Against.ArgumentNull(character, nameof(character));
 

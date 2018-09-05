@@ -48,6 +48,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LevelDecoratorTests.cs" />
+    <Compile Include="BarbarianDecoratorTests.cs" />
+    <Compile Include="WizardDecoratorTests.cs" />
     <Compile Include="CharacterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

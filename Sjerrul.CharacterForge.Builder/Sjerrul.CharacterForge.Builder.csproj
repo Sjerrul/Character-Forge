@@ -53,8 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rulebook.cs" />
     <Compile Include="Rules\IRule.cs" />
+    <Compile Include="Rules\Race\CharacterMustHaveAClassRule.cs" />
     <Compile Include="Rules\Race\CharacterMustHaveRaceRule.cs" />
     <Compile Include="Violations\IViolation.cs" />
+    <Compile Include="Violations\ClassNotSetViolation.cs" />
     <Compile Include="Violations\RaceNotSetViolation.cs" />
   </ItemGroup>
   <ItemGroup>

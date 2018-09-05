@@ -35,6 +35,7 @@ namespace Sjerrul.CharacterForge.Core
             this.BaseConstitution = 10;
 
             this.Race = new UndefinedRace();
+            this.Level = 0;
 
             this.Classes = new List<IClass>();
         }
@@ -51,21 +52,6 @@ namespace Sjerrul.CharacterForge.Core
             Guard.Against.ArgumentNull(subrace, nameof(subrace));
 
             this.Subrace = subrace;
-        }
-
-        public void SetLevel(int level)
-        {
-            Guard.That(level > 0).WhenFalse.Throws<ArgumentException>($"Parameter level is {level}, but must be positive");
-            Guard.That(level < 20).WhenFalse.Throws<ArgumentException>($"Parameter level is {level}, but must be less than 20");
-
-            this.Level = level;
-        }
-
-        public void AddClass(IClass characterClass)
-        {
-            Guard.Against.ArgumentNull(characterClass, nameof(characterClass));
-
-            this.Classes.Add(characterClass);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sjerrul.CharacterForge.Core.Abilities;
 using Sjerrul.CharacterForge.Core.Races;
+using Sjerrul.CharacterForge.Core.Races.Subraces;
 
 namespace Sjerrul.CharacterForge.Core.Tests
 {
@@ -30,21 +31,37 @@ namespace Sjerrul.CharacterForge.Core.Tests
             var character = new Character();
 
             // Assert
-            Assert.AreEqual(Race.Undefined, character.Race.RaceName);
+            Assert.AreEqual(RaceName.Undefined, character.Race.RaceName);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void SetRace_Null_Throws()
+        public void Ctor_InitializesAsLevelZero()
+        {
+            // Act
+            var character = new Character();
+
+            // Assert
+            Assert.AreEqual(0, character.Level);
+        }
+
+        [TestMethod]
+        public void SetRace_NullRace_Throws()
         {
             // Arrange
             ICharacter character = new Character();
 
-            // Act
-            character.SetRace(null);
+            // Assert
+            Assert.ThrowsException<ArgumentNullException>(() => character.SetRace((IRace)null));
+        }
+
+        [TestMethod]
+        public void SetRace_NullSubRace_Throws()
+        {
+            // Arrange
+            ICharacter character = new Character();
 
             // Assert
-            //ExpectedException
+            Assert.ThrowsException<ArgumentNullException>(() => character.SetRace((ISubrace)null));
         }
 
         [TestMethod]
@@ -57,7 +74,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             character.SetRace(new Dwarf());
 
             // Assert
-            Assert.AreEqual(Race.Dwarf, character.Race.RaceName);
+            Assert.AreEqual(RaceName.Dwarf, character.Race.RaceName);
         }
     }
 }

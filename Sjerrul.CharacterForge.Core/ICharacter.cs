@@ -1,6 +1,7 @@
 ﻿using Sjerrul.CharacterForge.Core.Abilities;
 using Sjerrul.CharacterForge.Core.Classes;
 using Sjerrul.CharacterForge.Core.Races;
+using Sjerrul.CharacterForge.Core.Races.Subraces;
 using System.Collections.Generic;
 
 namespace Sjerrul.CharacterForge.Core
@@ -19,5 +20,6 @@ namespace Sjerrul.CharacterForge.Core
         IList<IClass> Classes { get; }
 
         void SetRace(IRace race);
+        void SetRace(ISubrace subrace);
     }
 }

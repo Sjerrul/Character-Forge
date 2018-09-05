@@ -12,7 +12,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public class Dragonborn : BaseRace
     {
-        public override Race RaceName => Race.Dragonborn;
+        public override RaceName RaceName => RaceName.Dragonborn;
 
         public Dragonborn()
             : base()

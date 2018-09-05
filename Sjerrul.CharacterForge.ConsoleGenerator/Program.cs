@@ -4,6 +4,7 @@ using Sjerrul.CharacterForge.Builder.OutputGeneration;
 using Sjerrul.CharacterForge.Builder.Violations;
 using Sjerrul.CharacterForge.Core;
 using Sjerrul.CharacterForge.Core.Classes;
+using Sjerrul.CharacterForge.Core.Decorators;
 using Sjerrul.CharacterForge.Core.Races;
 using Sjerrul.CharacterForge.Core.Races.Subraces.Dwarf;
 using System;
@@ -22,7 +23,7 @@ namespace Sjerrul.CharacterForge.ConsoleGenerator
             Console.WriteLine("test driver application and will generate a");
             Console.WriteLine("pre-defined character sheet");
 
-            Character character = BuildCharacter();
+            ICharacter character = BuildCharacter();
 
             CharacterSheetBuilder builder = new CharacterSheetBuilder();
             CharacterSheet sheet = builder.Build(character);
@@ -36,9 +37,9 @@ namespace Sjerrul.CharacterForge.ConsoleGenerator
             File.WriteAllText("charactersheet.md", output);
         }
 
-        private static Character BuildCharacter()
+        private static ICharacter BuildCharacter()
         {
-            Character character = new Character
+            ICharacter character = new Character
             {
                 BaseCharisma = 10,
                 BaseConstitution = 12,
@@ -48,10 +49,10 @@ namespace Sjerrul.CharacterForge.ConsoleGenerator
                 BaseWisdom = 10
             };
 
-            character.SetLevel(1);
-            character.SetRace(new Elf());
+            character.SetRace(new Dragonborn());
             character.SetRace(new BlackAncestry());
-            character.AddClass(new Wizard());
+
+            character = new WizardDecorator(character);
 
             return character;
         }

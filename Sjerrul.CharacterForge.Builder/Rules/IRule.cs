@@ -10,6 +10,6 @@ namespace Sjerrul.CharacterForge.Builder.Rules
 {
     public interface IRule
     {
-        IEnumerable<IViolation> Check(Character character);
+        IEnumerable<IViolation> Check(ICharacter character);
     }
 }

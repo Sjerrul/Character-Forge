@@ -42,7 +42,7 @@ namespace Sjerrul.CharacterForge.Builder.OutputGeneration
         private void AppendBaseDescription(StringBuilder output, CharacterSheet sheet)
         {
             string classesDescription = string.Join("/", sheet.Classes.Select(x => x.Name));
-            output.AppendLine($"# {sheet.Race.RaceName} {classesDescription} (Level {sheet.Level})");
+            output.AppendLine($"# {sheet.Race.Race} {classesDescription} (Level {sheet.Level})");
         }
 
         private void AppendAbilityBlock(StringBuilder output, CharacterSheet sheet)
@@ -56,7 +56,7 @@ namespace Sjerrul.CharacterForge.Builder.OutputGeneration
         private void AppendFeatureBlock(StringBuilder output, CharacterSheet sheet)
         {
             output.AppendLine("# Features");
-            foreach (var feature in sheet.Race.Features)
+            foreach (var feature in sheet.Features)
             {
                 output.AppendLine(feature.Description);
             }

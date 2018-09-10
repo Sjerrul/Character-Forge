@@ -8,6 +8,7 @@ using Sjerrul.CharacterForge.Builder.Rules.Race;
 using Sjerrul.CharacterForge.Builder.Violations;
 using Sjerrul.CharacterForge.Core;
 using Sjerrul.CharacterForge.Core.Races;
+using Sjerrul.CharacterForge.Core.Races.Dwarf;
 
 namespace Sjerrul.CharacterForge.Builder.Tests
 {
@@ -34,7 +35,7 @@ namespace Sjerrul.CharacterForge.Builder.Tests
         {
             // Arrange
             Character character = new Character();
-            character.SetRace(new Dwarf());
+            character.SetRace(new CommonDwarf());
 
             // Act
             IRule rule = new CharacterMustHaveRaceRule();

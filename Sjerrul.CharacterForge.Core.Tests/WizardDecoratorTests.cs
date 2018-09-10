@@ -51,7 +51,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             character = new WizardDecorator(character);
 
             // Assert
-            Assert.AreEqual(1, character.Classes.Count);
+            Assert.AreEqual(1, character.Classes.Count());
             Assert.AreEqual(1, character.Classes.Count(x => x.Name == "Wizard"));
         }
 
@@ -66,7 +66,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             character = new WizardDecorator(character);
 
             // Assert
-            Assert.AreEqual(2, character.Classes.Count);
+            Assert.AreEqual(2, character.Classes.Count());
             Assert.AreEqual(2, character.Classes.Count(x => x.Name == "Wizard"));
         }
     }

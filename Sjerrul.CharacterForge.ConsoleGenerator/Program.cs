@@ -3,10 +3,9 @@ using Sjerrul.CharacterForge.Builder.Factories;
 using Sjerrul.CharacterForge.Builder.OutputGeneration;
 using Sjerrul.CharacterForge.Builder.Violations;
 using Sjerrul.CharacterForge.Core;
-using Sjerrul.CharacterForge.Core.Classes;
 using Sjerrul.CharacterForge.Core.Decorators;
-using Sjerrul.CharacterForge.Core.Races;
-using Sjerrul.CharacterForge.Core.Races.Subraces.Dwarf;
+using Sjerrul.CharacterForge.Core.Races.Dragonborn;
+using Sjerrul.CharacterForge.Core.Races.Dwarf;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,17 +40,15 @@ namespace Sjerrul.CharacterForge.ConsoleGenerator
         {
             ICharacter character = new Character
             {
-                BaseCharisma = 10,
-                BaseConstitution = 12,
-                BaseDexterity = 8,
-                BaseIntelligence = 14,
                 BaseStrength = 17,
-                BaseWisdom = 10
+                BaseDexterity = 8,
+                BaseWisdom = 10,
+                BaseIntelligence = 14,
+                BaseConstitution = 12,
+                BaseCharisma = 10,
             };
 
-            character.SetRace(new Dragonborn());
-            character.SetRace(new BlackAncestry());
-
+            character.SetRace(new HillDwarf());
             character = new WizardDecorator(character);
 
             return character;

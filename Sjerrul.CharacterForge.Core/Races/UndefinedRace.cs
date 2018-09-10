@@ -10,7 +10,7 @@ namespace Sjerrul.CharacterForge.Core.Races
 {
     public class UndefinedRace : BaseRace
     {
-        public override RaceName RaceName => RaceName.Undefined;
+        public override string Race => "Undefined";
 
         public UndefinedRace()
             : base()

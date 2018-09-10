@@ -1,20 +1,17 @@
-﻿using Sjerrul.CharacterForge.Core.Abilities;
-using Sjerrul.CharacterForge.Core.Classes;
+﻿using Sjerrul.CharacterForge.Core.Classes;
+using Sjerrul.CharacterForge.Core.Features;
 using Sjerrul.CharacterForge.Core.Races;
-using Sjerrul.CharacterForge.Core.Races.Subraces;
 using Sjerrul.CharacterForge.Utilities.Assertion;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Sjerrul.CharacterForge.Core
 {
     public class Character : ICharacter
     {
         public IRace Race { get; private set; }
-        public ISubrace Subrace { get; private set; }
 
-        public IList<IClass> Classes { get; private set; }
+        public IEnumerable<IClass> Classes { get; private set; }
+        public IEnumerable<IFeature> Features => this.Race.Features;
 
         public int BaseStrength { get; set; }
         public int BaseCharisma { get; set; }
@@ -45,13 +42,6 @@ namespace Sjerrul.CharacterForge.Core
             Guard.Against.ArgumentNull(race, nameof(race));
 
             this.Race = race;
-        }
-
-        public void SetRace(ISubrace subrace)
-        {
-            Guard.Against.ArgumentNull(subrace, nameof(subrace));
-
-            this.Subrace = subrace;
         }
     }
 }

@@ -1,29 +1,21 @@
 ﻿using Sjerrul.CharacterForge.Core.Features;
-using Sjerrul.CharacterForge.Core.Races.Subraces;
-using Sjerrul.CharacterForge.Utilities.Assertion;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sjerrul.CharacterForge.Core.Races
 {
-    public abstract class BaseRace : IRace, IEquatable<IRace>
+    public abstract class BaseRace : IRace, IEqualityComparer<IRace>
     {
-        public abstract RaceName RaceName { get; }
+        public abstract string Race { get; }
 
-        public IEnumerable<IFeature> Features { get; protected set; }
+        public virtual IEnumerable<IFeature> Features { get; protected set; }
 
-        public IEnumerable<IAbilityAdjustment> AbilityAdjustments { get; protected set; }
-
-        public IEnumerable<ISubrace> PossibleSubraces { get; protected set; }
+        public virtual IEnumerable<IAbilityAdjustment> AbilityAdjustments { get; protected set; }
 
         protected BaseRace()
         {
             this.Features = new List<IFeature>();
             this.AbilityAdjustments = new List<IAbilityAdjustment>();
-            this.PossibleSubraces = new List<ISubrace>();
         }
 
         public bool Equals(IRace other)
@@ -33,17 +25,22 @@ namespace Sjerrul.CharacterForge.Core.Races
                 return false;
             }
 
-            return this.RaceName == other.RaceName;
+            return this.Race == other.Race;
         }
 
-        public override int GetHashCode()
+        public bool Equals(IRace x, IRace y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetHashCode(IRace obj)
         {
             // Per Eric Lippert: https://stackoverflow.com/a/263416/1535282
-            unchecked 
+            unchecked
             {
                 int hash = (int)2166136261;
 
-                hash = (hash * 16777619) ^ this.RaceName.GetHashCode();
+                hash = (hash * 16777619) ^ this.Race.GetHashCode();
 
                 return hash;
             }

@@ -49,6 +49,7 @@
     <Compile Include="Assertion\ICondition.cs" />
     <Compile Include="Assertion\IThat.cs" />
     <Compile Include="Assertion\That.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -33,7 +33,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             character = new BarbarianDecorator(character);
 
             // Assert
-            Assert.AreEqual(2, character.Classes.Count);
+            Assert.AreEqual(2, character.Classes.Count());
             Assert.AreEqual(1, character.Classes.Count(x => x.Name == "Wizard"));
             Assert.AreEqual(1, character.Classes.Count(x => x.Name == "Barbarian"));
         }

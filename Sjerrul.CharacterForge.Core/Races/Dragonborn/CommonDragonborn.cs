@@ -1,27 +1,16 @@
 ﻿using Sjerrul.CharacterForge.Core.Abilities;
 using Sjerrul.CharacterForge.Core.Features;
-using Sjerrul.CharacterForge.Core.Races.Subraces;
-using Sjerrul.CharacterForge.Core.Races.Subraces.Dwarf;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sjerrul.CharacterForge.Core.Races
+namespace Sjerrul.CharacterForge.Core.Races.Dragonborn
 {
-    public class Dragonborn : BaseRace
+    public class CommonDragonborn : BaseRace
     {
-        public override RaceName RaceName => RaceName.Dragonborn;
+        public override string Race => "Dragonborn";
 
-        public Dragonborn()
+        public CommonDragonborn()
             : base()
         {
-            this.PossibleSubraces = new List<ISubrace>
-            {
-                new BlackAncestry()
-            };
-
             this.Features = new List<IFeature>
             {
                 new SpeedModification(30)

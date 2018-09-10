@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sjerrul.CharacterForge.Core.Abilities;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sjerrul.CharacterForge.Core.Races;
-using Sjerrul.CharacterForge.Core.Races.Subraces;
+using Sjerrul.CharacterForge.Core.Races.Dwarf;
+using System;
 
 namespace Sjerrul.CharacterForge.Core.Tests
 {
@@ -31,7 +30,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             var character = new Character();
 
             // Assert
-            Assert.AreEqual(RaceName.Undefined, character.Race.RaceName);
+            Assert.AreEqual("Undefined", character.Race.Race);
         }
 
         [TestMethod]
@@ -55,26 +54,16 @@ namespace Sjerrul.CharacterForge.Core.Tests
         }
 
         [TestMethod]
-        public void SetRace_NullSubRace_Throws()
-        {
-            // Arrange
-            ICharacter character = new Character();
-
-            // Assert
-            Assert.ThrowsException<ArgumentNullException>(() => character.SetRace((ISubrace)null));
-        }
-
-        [TestMethod]
         public void SetRace_Dwarf_ChangesRace()
         {
             // Arrange
             ICharacter character = new Character();
 
             // Act
-            character.SetRace(new Dwarf());
+            character.SetRace(new CommonDwarf());
 
             // Assert
-            Assert.AreEqual(RaceName.Dwarf, character.Race.RaceName);
+            Assert.AreEqual("Dwarf", character.Race.Race);
         }
     }
 }

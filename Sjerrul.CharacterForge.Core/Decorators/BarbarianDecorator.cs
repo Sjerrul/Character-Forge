@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sjerrul.CharacterForge.Core.Classes;
+using Sjerrul.CharacterForge.Core.Features;
 using Sjerrul.CharacterForge.Utilities.Extensions;
 
 namespace Sjerrul.CharacterForge.Core.Decorators
@@ -14,6 +15,9 @@ namespace Sjerrul.CharacterForge.Core.Decorators
         {
         }
 
-        public override IList<IClass> Classes => this.character.Classes.Concat(new Barbarian());
+        public override IEnumerable<IClass> Classes => base.Classes.Concat(new Barbarian());
+
+        public override IEnumerable<IFeature> Features => base.Features.Concat(new List<IFeature> {
+        });
     }
 }

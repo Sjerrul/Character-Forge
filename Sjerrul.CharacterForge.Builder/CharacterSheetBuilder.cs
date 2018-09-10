@@ -19,11 +19,17 @@ namespace Sjerrul.CharacterForge.Builder
             var characterSheet = new CharacterSheet();
 
             SetAttributes(characterSheet, character);
+            SetFeatures(characterSheet, character);
             characterSheet.Race = character.Race;
             characterSheet.Classes = character.Classes;
             characterSheet.Level = character.Level;
 
             return characterSheet;
+        }
+
+        private void SetFeatures(CharacterSheet characterSheet, ICharacter character)
+        {
+            characterSheet.Features = character.Features;
         }
 
         private void SetAttributes(CharacterSheet characterSheet, ICharacter character)

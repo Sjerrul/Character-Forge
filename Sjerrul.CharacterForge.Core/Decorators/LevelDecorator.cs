@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sjerrul.CharacterForge.Core.Classes;
+﻿using Sjerrul.CharacterForge.Core.Classes;
+using Sjerrul.CharacterForge.Core.Features;
 using Sjerrul.CharacterForge.Core.Races;
-using Sjerrul.CharacterForge.Core.Races.Subraces;
 using Sjerrul.CharacterForge.Utilities.Assertion;
+using System.Collections.Generic;
 
 namespace Sjerrul.CharacterForge.Core.Decorators
 {
     public abstract class LevelDecorator : ICharacter
     {
-        protected readonly ICharacter character;
+        private readonly ICharacter character;
 
         protected LevelDecorator(ICharacter character)
         {
@@ -35,18 +31,14 @@ namespace Sjerrul.CharacterForge.Core.Decorators
 
         public IRace Race => this.character.Race;
 
-        public abstract IList<IClass> Classes { get; }
+        public virtual IEnumerable<IClass> Classes => this.character.Classes;
+        public virtual IEnumerable<IFeature> Features => this.character.Race.Features;
 
         public int Level => this.character.Level + 1;
 
         public void SetRace(IRace race)
         {
             this.character.SetRace(race);
-        }
-
-        public void SetRace(ISubrace subrace)
-        {
-            this.character.SetRace(subrace);
         }
     }
 }

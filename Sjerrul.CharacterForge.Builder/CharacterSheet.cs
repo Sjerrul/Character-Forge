@@ -1,5 +1,6 @@
 ﻿using Sjerrul.CharacterForge.Builder.Calculators;
 using Sjerrul.CharacterForge.Core.Classes;
+using Sjerrul.CharacterForge.Core.Features;
 using Sjerrul.CharacterForge.Core.Races;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Sjerrul.CharacterForge.Builder
         public int Level { get; internal set; }
         public IRace Race { get; internal set; }
         public IEnumerable<IClass> Classes { get; internal set; }
+        public IEnumerable<IFeature> Features { get; internal set; }
 
         public int Hitpoints => HitpointCalculator.CalculateHitpoints(this.Classes);
 

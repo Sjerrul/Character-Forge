@@ -3,7 +3,7 @@ using Sjerrul.CharacterForge.Core.Decorators;
 using System;
 using System.Linq;
 
-namespace Sjerrul.CharacterForge.Core.Tests
+namespace Sjerrul.CharacterForge.Core.Tests.Classes
 {
     [TestClass]
     public class BarbarianDecoratorTests
@@ -51,7 +51,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             character = new BarbarianDecorator(character);
 
             // Assert
-            Assert.AreEqual(1, character.Classes.Count);
+            Assert.AreEqual(1, character.Classes.Count());
             Assert.AreEqual(1, character.Classes.Count(x => x.Name == "Barbarian"));
         }
 
@@ -66,7 +66,7 @@ namespace Sjerrul.CharacterForge.Core.Tests
             character = new BarbarianDecorator(character);
 
             // Assert
-            Assert.AreEqual(2, character.Classes.Count);
+            Assert.AreEqual(2, character.Classes.Count());
             Assert.AreEqual(2, character.Classes.Count(x => x.Name == "Barbarian"));
 
         }

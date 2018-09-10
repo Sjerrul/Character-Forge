@@ -1,19 +1,14 @@
 ﻿using Sjerrul.CharacterForge.Core.Abilities;
 using Sjerrul.CharacterForge.Core.Features;
-using Sjerrul.CharacterForge.Core.Races.Subraces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sjerrul.CharacterForge.Core.Races
+namespace Sjerrul.CharacterForge.Core.Races.Dwarf
 {
-    public class Dwarf : BaseRace
+    public class CommonDwarf : BaseRace
     {
-        public override RaceName RaceName => RaceName.Dwarf;
+        public override string Race => "Dwarf";
 
-        public Dwarf()
+        public CommonDwarf()
             : base()
         {
             this.Features = new List<IFeature>

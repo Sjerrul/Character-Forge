@@ -13,7 +13,7 @@ namespace Sjerrul.CharacterForge.Builder.Rules.Race
     {
         public IEnumerable<IViolation> Check(ICharacter character)
         {
-            if (character.Race.RaceName == RaceName.Undefined)
+            if (character.Race.Race == "Undefined")
             {
                 yield return new RaceNotSetViolation();
             }

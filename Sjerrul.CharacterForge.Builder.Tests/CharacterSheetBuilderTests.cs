@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sjerrul.CharacterForge.Core;
-using Sjerrul.CharacterForge.Core.Races;
+using Sjerrul.CharacterForge.Core.Races.Dragonborn;
+using Sjerrul.CharacterForge.Core.Races.Dwarf;
 
 namespace Sjerrul.CharacterForge.Builder.Tests
 {
@@ -21,7 +21,7 @@ namespace Sjerrul.CharacterForge.Builder.Tests
         {
             // Arrange
             ICharacter character = new Character();
-            character.SetRace(new Dwarf());
+            character.SetRace(new CommonDwarf());
 
             // Act
             CharacterSheet charactersheet = builder.Build(character);
@@ -35,7 +35,7 @@ namespace Sjerrul.CharacterForge.Builder.Tests
         {
             // Arrange
             ICharacter character = new Character();
-            character.SetRace(new Dragonborn());
+            character.SetRace(new CommonDragonborn());
 
             // Act
             CharacterSheet charactersheet = builder.Build(character);
